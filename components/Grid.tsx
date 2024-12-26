@@ -1,17 +1,23 @@
-import { section } from "framer-motion/client";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
+import { gridItems } from "@/data";
 
 export const Grid = () => {
   return (
     <section id="about">
       <BentoGrid>
-        {[{ title: "title", description: "Desc", id: 1 }].map((item) => (
+        {gridItems.map(({id,className,title,titleClassName,description,imgClassName,img,spareImg}) => (
           <BentoGridItem
-            id={item.id}
-            key={item.id}
-            title={item.title}
-            description={item.description}
+            id={id}
+            key={id}
+            className={className}
+            title={title}
+            description={description}
+            titleClassName={titleClassName}
+            img={img}
+            imgClassName={imgClassName}
+            spareImg={spareImg}
+
           />
         ))}
       </BentoGrid>
